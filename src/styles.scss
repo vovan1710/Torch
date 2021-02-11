@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/@theme/content.scss';
+@import './app/@theme/elements.scss';
+@import './app/@theme/margins.scss';
+@import './app/@theme/theme.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.mat-typography {
+  h1 {
+    font-size: 30px;
+    margin: 5px auto;
+  }
+  h2 {
+    font-size: 18px;
+    text-align: center;
+    margin: 5px auto;
+  }
+}
+
+.mat-typography p {
+  margin: auto;
+}
+
+section {
+  border-bottom: 1px solid $gray30;
+  padding: $main-padding 0;
+}

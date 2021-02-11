@@ -1,0 +1,29 @@
+@import '../@theme/theme.scss';
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  border-radius: $btn-radius;
+  height: 40px;
+  font-size: 11px;
+  mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.btn-blue  {
+  color: $blue040;
+  border: 1px solid $blue040;
+}

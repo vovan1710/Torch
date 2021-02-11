@@ -1,0 +1,26 @@
+@import './@theme/theme.scss';
+
+.box {
+  padding: $box-size $box-side;
+  height: calc(100vh - #{$box-size}*2);
+}
+
+.panel {
+  position: absolute;
+  height: $box-size;
+  padding: 0 $box-size;
+  &.horizontal {
+    width: -webkit-fill-available;
+    left: 0;
+  }
+}
+
+.container {
+  border: 4px solid;
+  height: 100%;
+  .content {
+    padding: $main-padding;
+  }
+}
+
+
