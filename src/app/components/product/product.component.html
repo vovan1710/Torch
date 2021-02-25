@@ -1,8 +1,8 @@
 <div class="product">
-  <img class="product-image" [src]='img' alt="product image">
-  <p class="mt-2 mb-1 text-center">{{name}}</p>
-  <p class="text-center font-bold">{{price}} {{currency}}.</p>
-  <button class="btn btn-blue w-100 mt-2">
+  <img class="product-image" [src]="product.img + '/1.jpg'" alt="product image">
+  <p class="mt-2 mb-1 text-center">{{product.name | langPipe}}</p>
+  <p class="text-center font-bold">{{product.price}} {{currency}}.</p>
+  <button class="btn btn-blue w-100 mt-2" (click)="openProduct()">
     <mat-icon>shopping_cart</mat-icon>
     <span>В корзину</span>
   </button>

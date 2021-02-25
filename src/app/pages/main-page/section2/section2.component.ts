@@ -9,7 +9,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./section2.component.scss']
 })
 export class Section2Component implements OnInit {
-  public lang = '';
   public data = mainSection2;
 
   options: OwlOptions = {
@@ -21,9 +20,7 @@ export class Section2Component implements OnInit {
     margin: 30
   };
 
-  constructor(private languageService: LanguageService) {
-    this.lang = this.languageService.getLang();
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }

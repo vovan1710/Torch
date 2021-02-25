@@ -64,3 +64,20 @@
 .text-center {
   text-align: center;
 }
+
+.font-xs {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.font-m {
+  font-size: 16px;
+}
+
+
+.round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

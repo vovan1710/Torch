@@ -8,14 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./section1.component.scss']
 })
 export class Section1Component implements OnInit {
-  public text = {
-    title: '',
-    descr: ''
-  };
+  public text = mainSection1;
 
-  constructor(public languageService: LanguageService) {
-    this.text = mainSection1[languageService.getLang()];
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }

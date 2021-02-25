@@ -1,3 +1,4 @@
+import { DialogsModule } from './_dialogs/dialogs.module';
 import { MainPageModule } from './pages/main-page/main-page.module';
 import { ComponentsModule } from './components/components.module';
 import { CustomMaterialModule } from './@theme/custom-material.module';
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ComponentsModule,
     MainPageModule,
+    DialogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

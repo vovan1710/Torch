@@ -1,5 +1,7 @@
 @import './@theme/theme.scss';
 
+$border-width: 4px;
+
 .box {
   padding: $box-size $box-side;
   height: calc(100vh - #{$box-size}*2);
@@ -16,11 +18,29 @@
 }
 
 .container {
-  border: 4px solid;
+  border: $border-width solid;
   height: 100%;
   .content {
     padding: $main-padding;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
+}
+
+.basket-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  box-sizing: border-box;
+  padding: 12px 25px;
+  background-color: rgba($color: #fff, $alpha: 0.9);
+  left: $box-size/2 + $border-width;
+  top: $box-size + $border-width;
+  width: calc(100% - #{$box-size + 2*$border-width});
 }
 
 

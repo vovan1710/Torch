@@ -8,8 +8,8 @@
         <img style="max-width: 25px;" class="w-100" src="../assets/Test/box.png" alt="box">
       </button>
     </div>
-    <div>
-      <p>Logo</p>
+    <div class="d-flex">
+      <img style="height: 38px;" src="../assets/Logo/logo.svg" alt="logo">
     </div>
     <div>
       <app-lang-changer></app-lang-changer>
@@ -22,7 +22,11 @@
     <mat-sidenav class="sidenav" position='start' #sidenav>
       test as a sad asda
     </mat-sidenav>
-    <mat-sidenav-content class="content">
+    <mat-sidenav-content class="content" (scroll)="onWindowScroll($event)">
+      <div class="basket-info" [@fade] *ngIf="showBasketInfo">
+        <p class="font-m font-bold">В вашей коробке</p>
+        <img style="max-width: 30px;" class="w-100" src="../assets/Test/box.png" alt="box">
+      </div>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

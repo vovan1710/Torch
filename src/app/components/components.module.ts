@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { LangChangerComponent } from './lang-changer/lang-changer.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
+import { LangPipe } from '../_pipes/lang.pipe';
 
 
 
 @NgModule({
   declarations: [
     LangChangerComponent,
-    ProductComponent
+    ProductComponent,
+    LangPipe
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { ProductComponent } from './product/product.component';
   ],
   exports: [
     LangChangerComponent,
-    ProductComponent
+    ProductComponent,
+    LangPipe
   ]
 })
 export class ComponentsModule { }

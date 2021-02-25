@@ -1,6 +1,6 @@
 <section>
   <div class="row mb-3" *ngFor="let row of data">
-    <h2 class="mb-3">{{row.title}}</h2>
+    <h2 class="mb-3">{{row.title | langPipe}}</h2>
 
     <div class="carousel d-flex j-between">
       <button class="btn-icon" (click)="carousel.prev()">
@@ -8,7 +8,7 @@
       </button>
       <owl-carousel-o [options]="options" #carousel class="owl-carousel">
         <ng-template carouselSlide *ngFor="let product of row.products" [width]="130">
-          <app-product [img]='product.img' [price]='product.price' [name]='product.name_UA'></app-product>
+          <app-product [product]='product'></app-product>
         </ng-template>
       </owl-carousel-o>
       <button class="btn-icon" (click)="carousel.next()">

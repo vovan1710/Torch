@@ -1,5 +1,9 @@
+import { Product } from './../../_types/Product.interface';
+import { ProductInfoDialogComponent } from './../../_dialogs/product-info-dialog/product-info-dialog.component';
+import { LanguageService } from './../../_services/language.service';
 import { BasketService } from './../../_services/basket.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product',
@@ -7,16 +11,24 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  @Input() img = '';
-  @Input() price = '';
-  @Input() name = '';
+  @Input() product: Product;
   public currency = '';
 
-  constructor(private basketService: BasketService) {
+  constructor(private basketService: BasketService,
+              private dialog: MatDialog) {
     this.currency = this.basketService.getCurrency();
   }
 
   ngOnInit(): void {
+  }
+
+  openProduct() {
+    const productDialog = this.dialog.open(ProductInfoDialogComponent, {
+      disableClose: false,
+      data: this.product,
+      width: '900px',
+      panelClass: 'product-dialog',
+    });
   }
 
 }

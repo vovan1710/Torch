@@ -7,6 +7,7 @@
   background-color: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .btn {
@@ -18,12 +19,29 @@
   border-radius: $btn-radius;
   height: 40px;
   font-size: 11px;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.8;
+    cursor: auto;
+  }
   mat-icon {
     margin-right: 5px;
+  }
+  &.m {
+    width: 200px;
   }
 }
 
 .btn-blue  {
   color: $blue040;
   border: 1px solid $blue040;
+}
+
+.pop-up {
+  position: relative;
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }

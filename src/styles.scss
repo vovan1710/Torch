@@ -21,13 +21,53 @@ button {
     text-align: center;
     margin: 5px auto;
   }
+  h3 {
+    font-size: 20px;
+    margin: 5px auto;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 18px;
+    margin: 0 auto;
+    font-weight: 600;
+  }
 }
 
 .mat-typography p {
-  margin: auto;
+  margin: inherit;
 }
 
 section {
   border-bottom: 1px solid $gray30;
   padding: $main-padding 0;
+}
+
+.cdk-overlay-container .mat-dialog-container {
+  padding: $main-padding;
+}
+
+
+/* toast classes */
+.mat-snack-bar-container .mat-simple-snackbar {
+  span {
+      margin: auto;
+  }
+}
+.error {
+  background-color: rgba($color: #fff, $alpha: 0.95);
+  text-align: center;
+  color: $red100;
+  border: 2px solid $red100;
+  .mat-button-wrapper {
+    color: $red100;
+  }
+}
+.success {
+  text-align: center;
+  text-align: center;
+  color: $blue040;
+  border: 2px solid $blue040;
+  .mat-button-wrapper {
+    color: $blue040;
+  }
 }

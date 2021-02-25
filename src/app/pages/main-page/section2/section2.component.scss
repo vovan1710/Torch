@@ -5,7 +5,10 @@
     margin: auto -10px;
   }
   .owl-carousel {
-    max-width: 85%;
+    max-width: 80%;
+  }
+  .btn-icon mat-icon {
+    font-size: 30px;
   }
   ::ng-deep.owl-carousel {
     margin: auto;
