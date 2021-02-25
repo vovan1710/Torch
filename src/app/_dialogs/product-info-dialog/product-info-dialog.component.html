@@ -1,0 +1,42 @@
+<div class="pop-up">
+  <button class="btn-icon close" (click)="dialogRef.close()"><mat-icon>close</mat-icon></button>
+  <div class="d-flex j-between a-center">
+    <div class="images-wrapp part">
+      <img [src]="product.img+'/'+ actualImage + '.jpg'" alt="Product image">
+      <div class="menu">
+        <div class="item round" (click)="actualImage=i+1" [ngClass]="{'active': i+1 === actualImage}" *ngFor="let item of maxImages; let i = index"></div>
+      </div>
+    </div>
+    <div class="product-info part">
+      <h3>{{product.name | langPipe}}</h3>
+      <h4 class="">{{product.price}} {{currency}}</h4>
+      <p class="mt-2 mb-2 font-xs">{{product.description | langPipe}}</p>
+      <div class="d-flex j-between">
+        <div class="left part">
+          <div class="size-wrapp">
+            <h4>Размер</h4>
+            <div class="d-flex j-between mt-1">
+              <div (click)="actualSize = size" [ngClass]="{'active': size === actualSize}" class="size round" *ngFor="let size of sizes">
+                {{size}}
+              </div>
+            </div>
+          </div>
+          <div class="small-images-wrapp d-flex j-between">
+            <ng-container *ngFor="let image of maxImages; let i=index">
+              <img [src]="product.img+'/'+ (i+1) + '.jpg'" alt="product image" *ngIf="actualImage !== i+1" (click)="actualImage = i+1">
+            </ng-container>
+          </div>
+        </div>
+       <div class="table part">
+        <img src="../../../assets/Test/table-size.jpg" alt="table sizes">
+       </div>
+      </div>
+      <div class="d-flex a-center bottom">
+        <button class="btn btn-blue" (click)="addToBasket()">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>В корзину</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
