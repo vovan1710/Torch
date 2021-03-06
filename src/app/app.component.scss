@@ -1,6 +1,6 @@
 @import './@theme/theme.scss';
 
-$border-width: 4px;
+$border-width: 1px;
 
 .box {
   padding: $box-size $box-side;
@@ -14,6 +14,13 @@ $border-width: 4px;
   &.horizontal {
     width: -webkit-fill-available;
     left: 0;
+    .basket-btn-wrapp {
+      position: relative;
+      .counter {
+        position: absolute;
+        top: 6px;
+      }
+    }
   }
 }
 
@@ -41,6 +48,7 @@ $border-width: 4px;
   left: $box-size/2 + $border-width;
   top: $box-size + $border-width;
   width: calc(100% - #{$box-size + 2*$border-width});
+  z-index: 50;
 }
 
 

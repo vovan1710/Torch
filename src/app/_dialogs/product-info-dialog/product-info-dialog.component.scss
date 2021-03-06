@@ -1,18 +1,23 @@
 @import '../../@theme/theme.scss';
 
-::ng-deep .product-dialog .mat-dialog-container {
-  // background-color: $gray30;
-  padding: 10px;
+::ng-deep .product-dialog {
+  max-width: 97%!important;
+  max-height: 97%;
+  overflow: auto;
+  .mat-dialog-container {
+    // background-color: $gray30;
+    padding: 10px;
+  }
 }
 
 .images-wrapp {
   max-width: 400px;
-  margin: auto;
+  margin-right: auto;
   position: relative;
   img {
     width: 100%;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
   .menu {
     position: absolute;
@@ -23,11 +28,11 @@
   .item {
     width: 9px;
     height: 9px;
-    border: 1px solid #fff;
+    border: 1px solid $blue040;
     cursor: pointer;
     margin-bottom: 16px;
     &.active {
-      background-color: #fff;
+      background-color: $blue040;
     }
   }
 }
@@ -36,8 +41,8 @@
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   &.active {
     background-color: rgba($color: $gray30, $alpha: 0.4) ;
   }
@@ -50,6 +55,9 @@
     display: block;
     height: 80px;
     cursor: pointer;
+    &:first-child {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -61,7 +69,7 @@
   width: 50%;
 }
 
-.part {
+.part, .in-part {
   width: 50%;
 }
 
@@ -70,19 +78,76 @@
 }
 
 .table {
+  display: flex;
+  align-items: flex-end;
   padding-left: $main-padding;
   img {
     width: 100%;
   }
 }
 
-
-
-
-
 .product-info {
   height: 100%;
   padding: 0 $main-padding*1.5;
-  // background-color: #fff;
 }
+
+@media screen and (max-width: $media-l) {
+  .close {
+    z-index: 30;
+    border-radius: $border-radius;
+    background-color: #fff;
+  }
+  ::ng-deep .product-dialog {
+    width: auto!important;
+  }
+  .row {
+    display: block;
+    max-width: 500px;
+  }
+  .part {
+    padding: 5px $main-padding;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: $media-s) {
+  .pop-up {
+    padding: 0 5%;
+  }
+  .images-wrapp {
+    width: 100%;
+    .menu {
+      right: 20px;
+    }
+  }
+  .small-images-wrapp {
+    margin-top: 20px;
+  }
+  .bottom {
+    .btn-blue {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $media-xs) {
+  .size-info-wrapp {
+    display: block;
+    .in-part {
+      width: 100%;
+      padding: 0;
+      margin: auto;
+      &.left {
+        margin-bottom: $main-padding;
+      }
+    }
+  }
+}
+
+
+
+
 

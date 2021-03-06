@@ -4,37 +4,54 @@
 @import './app/@theme/theme.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
 button {
   &:focus {
     outline: none;
   }
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mat-typography {
+  font-family: 'Montserrat', sans-serif!important;
+}
+
 .mat-typography {
   h1 {
     font-size: 30px;
     margin: 5px auto;
+    font-family: 'Montserrat', sans-serif;
   }
   h2 {
     font-size: 18px;
     text-align: center;
     margin: 5px auto;
+    font-family: 'Montserrat', sans-serif;
   }
   h3 {
     font-size: 20px;
     margin: 5px auto;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
   }
   h4 {
     font-size: 18px;
     margin: 0 auto;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
 .mat-typography p {
-  margin: inherit;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {

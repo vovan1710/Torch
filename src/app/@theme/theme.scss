@@ -4,6 +4,9 @@
 $box-size: 45px;
 $box-side: $box-size*0.5;
 $main-padding: 15px;
+$main-margin: 15px;
+$border-radius: 6px;
+$max-width: 1100px;
 
 //radius
 $btn-radius: 20px;
@@ -14,3 +17,9 @@ $gray30: #bebebe;
 
 $blue040: #2d92e1;
 
+// Media Queries
+$media-xs: 430px;
+$media-s: 575px;
+$media-m: 768px;
+$media-l: 992px;
+$media-xl: 1200px;

@@ -20,8 +20,13 @@ export class BasketService {
     return this.currency;
   }
 
+
   getProductById(id: string) {
     return this.allProducts.find(product => product.id === id);
+  }
+
+  checkProductsInBasket(id: string) {
+    return this.getBasketList().filter(product=> product.id ===id).length;
   }
 
   getBasketList() {

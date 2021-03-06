@@ -4,13 +4,14 @@
       <button (click)="sidenav.toggle()" class="btn-icon">
         <mat-icon style="font-size: 38px;" [inline]='true' aria-hidden="false" aria-label="menu">menu</mat-icon>
       </button>
-      <button class="btn-icon ml-2">
-        <img style="max-width: 25px;" class="w-100" src="../assets/Test/box.png" alt="box">
-      </button>
+      <a class="btn-icon basket-btn-wrapp ml-2" routerLink='basket'>
+        <div class="counter">{{basketCount}}</div>
+        <img style="max-width: 28px;" class="w-100" src="../assets/Test/box.png" alt="box">
+      </a>
     </div>
-    <div class="d-flex">
+    <a class="d-flex" routerLink=''>
       <img style="height: 38px;" src="../assets/Logo/logo.svg" alt="logo">
-    </div>
+    </a>
     <div>
       <app-lang-changer></app-lang-changer>
     </div>
@@ -23,11 +24,12 @@
       test as a sad asda
     </mat-sidenav>
     <mat-sidenav-content class="content" (scroll)="onWindowScroll($event)">
-      <div class="basket-info" [@fade] *ngIf="showBasketInfo">
-        <p class="font-m font-bold">В вашей коробке</p>
+      <div class="basket-info" [@fade] *ngIf="showBasketInfo" routerLink="basket">
+        <p class="font-m font-bold">В вашей коробке {{basketCount}} товаров</p>
         <img style="max-width: 30px;" class="w-100" src="../assets/Test/box.png" alt="box">
       </div>
       <router-outlet></router-outlet>
+      <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

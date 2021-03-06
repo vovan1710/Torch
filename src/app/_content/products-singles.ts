@@ -2,7 +2,7 @@ import { Product } from './../_types/Product.interface';
 
 export const singles : Product[] = [
   {
-    img: 'assets/Single/Single1',
+    img: 'assets/Singles/Single1',
     price: '37',
     id: 'i101',
     name: {
@@ -15,7 +15,7 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Single/Single2',
+    img: 'assets/Singles/Single2',
     price: '37',
     id: 'i102',
     name: {
@@ -28,7 +28,7 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Single/Single3',
+    img: 'assets/Singles/Single3',
     price: '37',
     id: 'i103',
     name: {
@@ -41,7 +41,7 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Single/Single4',
+    img: 'assets/Singles/Single4',
     price: '37',
     id: 'i104',
     name: {

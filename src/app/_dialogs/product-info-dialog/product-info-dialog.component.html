@@ -1,6 +1,6 @@
 <div class="pop-up">
   <button class="btn-icon close" (click)="dialogRef.close()"><mat-icon>close</mat-icon></button>
-  <div class="d-flex j-between a-center">
+  <div class="d-flex j-between a-center row">
     <div class="images-wrapp part">
       <img [src]="product.img+'/'+ actualImage + '.jpg'" alt="Product image">
       <div class="menu">
@@ -11,10 +11,10 @@
       <h3>{{product.name | langPipe}}</h3>
       <h4 class="">{{product.price}} {{currency}}</h4>
       <p class="mt-2 mb-2 font-xs">{{product.description | langPipe}}</p>
-      <div class="d-flex j-between">
-        <div class="left part">
+      <div class="d-flex j-between size-info-wrapp">
+        <div class="left in-part">
           <div class="size-wrapp">
-            <h4>Размер</h4>
+            <h4>{{basketContent.sizeName | langPipe}}</h4>
             <div class="d-flex j-between mt-1">
               <div (click)="actualSize = size" [ngClass]="{'active': size === actualSize}" class="size round" *ngFor="let size of sizes">
                 {{size}}
@@ -27,14 +27,15 @@
             </ng-container>
           </div>
         </div>
-       <div class="table part">
-        <img src="../../../assets/Test/table-size.jpg" alt="table sizes">
+       <div class="table in-part">
+        <img src="../../../assets/table-size.jpg" alt="table sizes">
        </div>
       </div>
       <div class="d-flex a-center bottom">
         <button class="btn btn-blue" (click)="addToBasket()">
           <mat-icon>shopping_cart</mat-icon>
-          <span>В корзину</span>
+          <span *ngIf="inBasketCount ===0">{{buttonsName.addBasket | langPipe}}</span>
+          <span *ngIf="inBasketCount > 0">{{buttonsName.addMore | langPipe}} ({{inBasketCount}})</span>
         </button>
       </div>
     </div>

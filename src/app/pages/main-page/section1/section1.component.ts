@@ -1,4 +1,4 @@
-import { mainSection1 } from './../../../_content/mainSection1';
+import { mainSection1 } from '../../../_content/main-section1';
 import { LanguageService } from './../../../_services/language.service';
 import { Component, OnInit } from '@angular/core';
 

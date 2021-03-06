@@ -1,5 +1,7 @@
+import { BasketService } from './_services/basket.service';
 import { fade } from './_animations/animations';
 import { Component, HostListener } from '@angular/core';
+import { basketContent } from './_content/basket';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,12 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   title = 'Torch';
   public showBasketInfo: boolean;
+
+  constructor(public basketService: BasketService) {}
+
+  get basketCount() {
+    return this.basketService.getBasketList().length;
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {

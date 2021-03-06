@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Section1Component } from './section1/section1.component';
 import { Section2Component } from './section2/section2.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Section3Component } from './section3/section3.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MainPageComponent,
     Section1Component,
     Section2Component,
+    Section3Component,
   ]
 })
 export class MainPageModule {}

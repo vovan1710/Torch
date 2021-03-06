@@ -1,0 +1,8 @@
+<section>
+  <h2 class="mb-3">{{data.title | langPipe}}</h2>
+  <div class="wrapper d-flex">
+    <div class="product" *ngFor="let product of data.products">
+      <app-product  [product]='product'></app-product>
+    </div>
+  </div>
+</section>
