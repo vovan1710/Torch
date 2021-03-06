@@ -4,7 +4,8 @@ $border-width: 1px;
 
 .box {
   padding: $box-size $box-side;
-  height: calc(100vh - #{$box-size}*2);
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .panel {
@@ -19,6 +20,7 @@ $border-width: 1px;
       .counter {
         position: absolute;
         top: 6px;
+        color: #000;
       }
     }
   }

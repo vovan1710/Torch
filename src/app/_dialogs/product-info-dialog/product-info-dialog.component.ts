@@ -1,3 +1,4 @@
+import { LanguageService } from './../../_services/language.service';
 import { buttonsName } from './../../_content/global';
 import { ToastService } from './../../_services/toast.service';
 import { fade } from './../../_animations/animations';
@@ -15,7 +16,6 @@ import { basketContent } from 'src/app/_content/basket';
   animations: [fade]
 })
 export class ProductInfoDialogComponent implements OnInit {
-  public buttonsName = buttonsName;
   public sizes = sizes;
   public actualImage = 1;
   public actualSize;
@@ -24,10 +24,12 @@ export class ProductInfoDialogComponent implements OnInit {
   public inBasketCount = 0;
 
   public basketContent = basketContent;
+  public buttonsName = buttonsName;
 
   constructor(public dialogRef: MatDialogRef<ProductInfoDialogComponent>,
               private basketService: BasketService,
               public toastService: ToastService,
+              private languageService: LanguageService,
               @Inject (MAT_DIALOG_DATA) public product: Product) {
                 this.currency = basketService.getCurrency();
                 this.inBasketCount = basketService.checkProductsInBasket(this.product.id);
@@ -38,12 +40,12 @@ export class ProductInfoDialogComponent implements OnInit {
 
   addToBasket() {
     if (this.actualSize) {
-      this.toastService.success('Товар добавлен в корзину!')
+      this.toastService.success(this.basketContent.AddSuccess[this.languageService.getLang()]);
       this.basketService.addProductToBasket(this.product, this.actualSize);
       this.actualSize = '';
       this.inBasketCount = this.basketService.checkProductsInBasket(this.product.id);
     } else {
-      this.toastService.error('Не выбран размер!')
+      this.toastService.error(this.basketContent.AddError[this.languageService.getLang()])
     }
     console.log('basket', this.basketService.getBasketList());
   }

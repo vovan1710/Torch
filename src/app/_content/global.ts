@@ -8,14 +8,3 @@ export const buttonsName = {
     RU: 'Добавить еще'
   },
 }
-
-export const size = {
-  name: {
-    UA: 'Розмір',
-    RU: 'Размер'
-  },
-  error: {
-    UA: 'Розмір не вибраний',
-    RU: 'Размер не выбран'
-  }
-}

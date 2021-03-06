@@ -12,7 +12,8 @@
     "serve:ssr": "node dist/Torch/server/main.js",
     "build:ssr": "ng build --prod && ng run Torch:server:production",
     "prerender": "ng run Torch:prerender",
-    "serve:prerender": "http-server -c-1 dist/Torch/browser"
+    "serve:prerender": "http-server -c-1 dist/Torch/browser",
+    "github": "ng deploy --base-href=/Torch/"
   },
   "private": true,
   "dependencies": {

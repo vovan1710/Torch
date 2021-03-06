@@ -6,11 +6,11 @@
       </button>
       <a class="btn-icon basket-btn-wrapp ml-2" routerLink='basket'>
         <div class="counter">{{basketCount}}</div>
-        <img style="max-width: 28px;" class="w-100" src="../assets/Test/box.png" alt="box">
+        <img style="max-width: 28px;" class="w-100" src="assets/Test/box.png" alt="box">
       </a>
     </div>
     <a class="d-flex" routerLink=''>
-      <img style="height: 38px;" src="../assets/Logo/logo.svg" alt="logo">
+      <img style="height: 38px;" src="assets/Logo/logo.svg" alt="logo">
     </a>
     <div>
       <app-lang-changer></app-lang-changer>
@@ -26,7 +26,7 @@
     <mat-sidenav-content class="content" (scroll)="onWindowScroll($event)">
       <div class="basket-info" [@fade] *ngIf="showBasketInfo" routerLink="basket">
         <p class="font-m font-bold">В вашей коробке {{basketCount}} товаров</p>
-        <img style="max-width: 30px;" class="w-100" src="../assets/Test/box.png" alt="box">
+        <img style="max-width: 30px;" class="w-100" src="assets/Test/box.png" alt="box">
       </div>
       <router-outlet></router-outlet>
       <app-footer></app-footer>
