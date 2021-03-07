@@ -1,4 +1,4 @@
-<div class="pop-up">
+<div class="pop-up" #popUp>
   <button class="btn-icon close" (click)="dialogRef.close()"><mat-icon>close</mat-icon></button>
   <div class="d-flex j-between a-center row">
     <div class="images-wrapp part">
@@ -10,7 +10,7 @@
     <div class="product-info part">
       <h3>{{product.name | langPipe}}</h3>
       <h4 class="">{{product.price}} {{currency}}</h4>
-      <p class="mt-2 mb-2 font-xs">{{product.description | langPipe}}</p>
+      <p [innerHTML]="(product.description | langPipe)" class="mt-2 mb-2 font-xs"></p>
       <div class="d-flex j-between size-info-wrapp">
         <div class="left in-part">
           <div class="size-wrapp">

@@ -1,3 +1,47 @@
 <section>
-  <p>info</p>
+  <div class="top">
+    <h1 class="text-center">{{basketContent.title | langPipe}}</h1>
+    <div class="btn-wrapp">
+      <a class="btn btn-underline" routerLink=''>
+        {{basketContent.prevButtonName | langPipe}}
+      </a>
+      <button class="btn btn-blue">
+        {{basketContent.nextButtonName | langPipe}}
+      </button>
+    </div>
+    <div class="products">
+      <p style="text-align: center; margin: 50px auto;" *ngIf="products.length == 0">Список товаров пуст</p>
+      <div class="product" *ngFor="let product of products">
+        <div class="product-content">
+          <div class="info d-flex">
+            <div class="product-image-wrapp">
+              <img class="product-image" [src]="product.img + '/1.jpg'" alt="product image">
+            </div>
+            {{product.name | langPipe}} ({{product.size}})
+          </div>
+          <div class="counter-wrapp">
+            <div class="counter d-flex">
+              <button (click)="minusCount(product)" class="btn-icon btn-count">-</button>
+              <input #countInput type="number" [value]="product.count">
+              <button (click)="plusCount(product)" class="btn-icon btn-count">+</button>
+            </div>
+            <button (click)="deleteProduct(product)" class="btn-icon mt-2" style="font-size: 10px;">{{basketContent.deleteButtonName | langPipe}}</button>
+          </div>
+          <div class="price">
+            {{product.price}} {{currency}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="total-info d-flex">
+    <div class="extra-info">
+      <p class="font-bold" [innerHTML]="(basketContent.delliveryInfo | langPipe)"></p>
+    </div>
+    <div class="total-price d-flex">
+      <p style="margin-right: 20px">{{basketContent.totalValueName | langPipe}}</p>
+      <p class="price">{{totalPrice}} {{currency}}</p>
+    </div>
+  </div>
 </section>

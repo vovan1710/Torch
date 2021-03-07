@@ -6,12 +6,17 @@ import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'main',
     component: MainPageComponent,
   },
   {
     path: 'basket',
     component: BasketPageComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full'
   },
 ];
 

@@ -1,1 +1,150 @@
 @import '../../@theme/theme.scss';
+
+section {
+  height: 100%;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.btn-wrapp {
+  max-width: $max-width;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-underline {
+  padding: 2px 0;
+}
+
+.btn-blue {
+  min-width: 150px;
+}
+
+.product {
+  .product-content {
+    max-width: $max-width;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 70px;
+  }
+  padding: $main-padding;
+  border-bottom: 1px solid;
+  margin-left: -$main-padding;
+  margin-right: -$main-padding;
+  &:first-child {
+    border-top: 1px solid;
+  }
+
+  .product-image {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+
+  .counter {
+    border: 3px solid;
+    .btn-count {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+    input {
+      width: 30px;
+      border: none;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}
+
+.price {
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.total-info {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  margin-top: $main-margin*2;
+  padding-bottom: $main-padding;
+  .extra-info {
+    padding-right: $main-padding;
+    width: 50%;
+    font-size: 11px;
+    color: #e84869;
+    box-sizing: border-box;
+    p {
+      max-width: 300px;
+    }
+  }
+  .total-price {
+    justify-content: space-between;
+    width: 50%;
+
+    padding-left: $main-padding;
+    box-sizing: border-box;
+    margin-left: auto;
+    max-width: 400px;
+    p {
+      font-weight: 600;
+    }
+    .price {
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: $media-m) {
+  .total-info {
+    flex-direction: column-reverse;
+    .total-price {
+      width: 100%;
+      max-width: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+    .extra-info {
+      font-size: 9px;
+      line-height: 16px;
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: $media-s) {
+  .btn-wrapp {
+    margin-top: 30px;
+  }
+  .btn-blue {
+    min-width: 130px
+  }
+  .product {
+    .product-content {
+      height: auto;
+      align-items: center;
+    }
+    .info {
+      width: 100%;
+      margin-bottom: -10px;
+    }
+    .counter-wrapp {
+      margin-left: 70px;
+    }
+  }
+}

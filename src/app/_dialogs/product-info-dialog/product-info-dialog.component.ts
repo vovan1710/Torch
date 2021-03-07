@@ -5,7 +5,7 @@ import { fade } from './../../_animations/animations';
 import { sizes } from './../../_content/sizes';
 import { Product } from './../../_types/Product.interface';
 import { BasketService } from './../../_services/basket.service';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { basketContent } from 'src/app/_content/basket';
 
@@ -16,6 +16,7 @@ import { basketContent } from 'src/app/_content/basket';
   animations: [fade]
 })
 export class ProductInfoDialogComponent implements OnInit {
+  @ViewChild('popUp') private popUp: ElementRef;
   public sizes = sizes;
   public actualImage = 1;
   public actualSize;
@@ -49,5 +50,6 @@ export class ProductInfoDialogComponent implements OnInit {
     }
     console.log('basket', this.basketService.getBasketList());
   }
+
 
 }

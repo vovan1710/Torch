@@ -10,5 +10,7 @@ export interface Product {
     UA: string,
     RU: string
   },
-  size?: string
+  size?: string,
+  count?: number,
+  dateAdded?: Date
 }

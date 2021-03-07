@@ -1,7 +1,8 @@
 import { BasketService } from './_services/basket.service';
 import { fade } from './_animations/animations';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { basketContent } from './_content/basket';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,19 @@ import { basketContent } from './_content/basket';
   animations: [fade]
 })
 export class AppComponent {
+  @ViewChild('content', { static: true }) content: any;
   title = 'Torch';
   public showBasketInfo: boolean;
 
-  constructor(public basketService: BasketService) {}
+  constructor(public basketService: BasketService,
+              private route: ActivatedRoute,
+              public router: Router) {
+                this.router.events.subscribe((val) => {
+                  if (val instanceof NavigationEnd) {
+                    this.content.elementRef.nativeElement.scrollTop = 0;
+                  }
+                });
+              }
 
   get basketCount() {
     return this.basketService.getBasketList().length;
@@ -22,6 +32,7 @@ export class AppComponent {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event) {
     const limit = $event.target.scrollTop/($event.target.scrollHeight - $event.target.offsetHeight);
-    this.showBasketInfo = limit>0.1;
+    const actualPage = this.route.snapshot['_routerState']?.url;
+    this.showBasketInfo = limit>0.1&&actualPage.includes('main');
   }
 }

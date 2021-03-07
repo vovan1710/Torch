@@ -53,4 +53,10 @@ $border-width: 1px;
   z-index: 50;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
