@@ -5,9 +5,9 @@
       <a class="btn btn-underline" routerLink=''>
         {{basketContent.prevButtonName | langPipe}}
       </a>
-      <button class="btn btn-dark">
+      <a class="btn btn-dark" routerLink="/checkout">
         {{basketContent.nextButtonName | langPipe}}
-      </button>
+      </a>
     </div>
     <div class="products">
       <p style="text-align: center; margin: 50px auto;" *ngIf="products.length == 0">Список товаров пуст</p>
