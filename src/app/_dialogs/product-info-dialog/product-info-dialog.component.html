@@ -1,13 +1,28 @@
 <div class="pop-up" #popUp>
   <button class="btn-icon close" (click)="dialogRef.close()"><mat-icon>close</mat-icon></button>
   <div class="d-flex j-between a-center row">
-    <div class="images-wrapp part">
-      <img [src]="product.img+'/'+ actualImage + '.jpg'" alt="Product image">
+    <div class="carousel part" [@fade] *ngIf="showCarousel">
+      <button class="btn btn-squere btn-left" (click)="carousel.prev()" [disabled]="actualImage===1">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <button class="btn btn-squere btn-right" (click)="carousel.next()" [disabled]="actualImage===maxImages.length">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+      <owl-carousel-o [options]="carouselOptions" #carousel class="carousel-row" (changed)="imageChanged($event)" >
+        <ng-template carouselSlide *ngFor="let image of maxImages; let i = index" [id]="i">
+          <img class="product-image" [src]="product.img+'/'+ (i+1) + '.jpg'" alt="Product image">
+        </ng-template>
+      </owl-carousel-o>
       <div class="menu">
         <div class="item round" (click)="actualImage=i+1" [ngClass]="{'active': i+1 === actualImage}" *ngFor="let item of maxImages; let i = index"></div>
       </div>
     </div>
     <div class="product-info part">
+      <div class="small-images-mobile d-flex">
+        <ng-container *ngFor="let image of maxImages; let i=index">
+          <img [src]="product.img+'/'+ (i+1) + '.jpg'" alt="product image" *ngIf="actualImage !== i+1" (click)="carouselEl.to(i.toString())">
+        </ng-container>
+      </div>
       <h3>{{product.name | langPipe}}</h3>
       <h4 class="">{{product.price}} {{currency}}</h4>
       <p [innerHTML]="(product.description | langPipe)" class="mt-2 mb-2 font-xs"></p>
@@ -20,10 +35,11 @@
                 {{size}}
               </div>
             </div>
+            <button (click)="openTableDialog()" class="btn-icon table-link">Таблиця размірів</button>
           </div>
-          <div class="small-images-wrapp d-flex j-between">
+          <div class="small-images-desktop d-flex j-between">
             <ng-container *ngFor="let image of maxImages; let i=index">
-              <img [src]="product.img+'/'+ (i+1) + '.jpg'" alt="product image" *ngIf="actualImage !== i+1" (click)="actualImage = i+1">
+              <img [src]="product.img+'/'+ (i+1) + '.jpg'" alt="product image" *ngIf="actualImage !== i+1" (click)="carouselEl.to(i.toString())">
             </ng-container>
           </div>
         </div>
@@ -32,7 +48,7 @@
        </div>
       </div>
       <div class="d-flex a-center bottom">
-        <button class="btn btn-blue" (click)="addToBasket()">
+        <button class="btn btn-dark" (click)="addToBasket()">
           <mat-icon>shopping_cart</mat-icon>
           <span *ngIf="inBasketCount ===0">{{buttonsName.addBasket | langPipe}}</span>
           <span *ngIf="inBasketCount > 0">{{buttonsName.addMore | langPipe}} ({{inBasketCount}})</span>

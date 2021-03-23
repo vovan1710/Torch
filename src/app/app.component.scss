@@ -59,4 +59,45 @@ $border-width: 1px;
   justify-content: space-between;
 }
 
+.social-icon {
+  height: 60%;
+  margin: 0 15px;
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
 
+.logo {
+  height: 22px;
+  @media screen and (max-width: $media-s) {
+    height: 17px;
+  }
+}
+
+
+.mobile-menu {
+  width: 80%;
+  padding: $main-padding;
+  .main-wrapp {
+    max-width: $max-width;
+    margin: auto;
+    margin-bottom: $main-margin;
+    .info {
+      margin: 0;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .logo-wrapp {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    img {
+      width: 150px;
+      margin-left: -23px;
+    }
+  }
+}

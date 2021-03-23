@@ -1,8 +1,17 @@
 <section>
   <h2 class="mb-3">{{data.title | langPipe}}</h2>
-  <div class="wrapper d-flex">
-    <div class="product" *ngFor="let product of data.products">
-      <app-product  [product]='product'></app-product>
-    </div>
+
+  <div class="carousel d-flex j-between">
+    <button class="btn-icon" (click)="carousel.prev()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <owl-carousel-o [options]="carouselOptions" #carousel class="carousel-row">
+      <ng-template carouselSlide *ngFor="let product of data.products" [width]="140">
+        <app-product [product]='product'></app-product>
+      </ng-template>
+    </owl-carousel-o>
+    <button class="btn-icon" (click)="carousel.next()">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
   </div>
 </section>

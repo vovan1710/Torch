@@ -9,19 +9,30 @@
         <img style="max-width: 28px;" class="w-100" src="assets/Test/box.png" alt="box">
       </a>
     </div>
-    <a class="d-flex" routerLink=''>
-      <img style="height: 38px;" src="assets/Logo/logo.svg" alt="logo">
+    <a class="d-flex font-bold" routerLink=''>
+      <img class="logo" src="../assets/Logo/text-logo.svg" alt="Torch logo">
     </a>
     <div>
       <app-lang-changer></app-lang-changer>
     </div>
   </div>
-  <div class="horizontal panel flex-center-between" style="bottom: 0;">
-    content-bottom
+  <div class="horizontal panel flex-center-center" style="bottom: 0;">
+    <a class="social-icon" href="https://www.instagram.com/musker_fusker/"><img src="assets/Icons/instagram.svg" alt="Instagram link"></a>
+    <a class="social-icon" href="https://www.instagram.com/musker_fusker/"><img src="assets/Icons/facebook.svg" alt="Facebook link"></a>
   </div>
   <mat-sidenav-container class="container">
-    <mat-sidenav class="sidenav" position='start' #sidenav>
-      test as a sad asda
+    <mat-sidenav class="mobile-menu" position='start' #sidenav>
+      <div class="main-wrapp">
+        <ul class="info">
+          <h4 class="mb-3">Інформація</h4>
+          <li><a href="">Оплата і доставка</a></li>
+          <li><a href="">Контакти</a></li>
+          <li><a href="">О нас</a></li>
+        </ul>
+        <div class="logo-wrapp">
+          <img src="assets/Logo/logo-white.svg" alt="Torch Logo">
+        </div>
+      </div>
     </mat-sidenav>
     <mat-sidenav-content class="content" #content (scroll)="onWindowScroll($event)">
       <div class="basket-info" [@fade] *ngIf="showBasketInfo" routerLink="basket">

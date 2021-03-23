@@ -1,20 +1,6 @@
 @import '../../../@theme/theme.scss';
 
-.wrapper {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  // gap: 14px;
-}
-
-.product {
-  width: 40%;
-  max-width: 140px;
-  margin: 0 $main-margin $main-margin*2;
-
-  @media screen and (max-width: $media-xs) {
-    width: 37%;
-  }
+section {
+  border: none;
+  padding-bottom: $main-padding*2;
 }

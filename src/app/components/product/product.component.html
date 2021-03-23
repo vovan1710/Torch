@@ -2,7 +2,7 @@
   <img class="product-image" [src]="product.img + '/1.jpg'" alt="product image"  (click)="openProduct()">
   <p class="mt-2 mb-1 text-center">{{product.name | langPipe}}</p>
   <p class="text-center font-bold">{{product.price}} {{currency}}.</p>
-  <button class="btn btn-blue w-100 mt-2" (click)="openProduct()">
+  <button class="btn btn-dark w-100 mt-2" (click)="openProduct()">
     <mat-icon>shopping_cart</mat-icon>
     <span *ngIf="inBasketCount ===0">{{buttonsName.addBasket | langPipe}}</span>
     <span *ngIf="inBasketCount > 0">{{buttonsName.addMore | langPipe}} ({{inBasketCount}})</span>

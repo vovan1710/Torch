@@ -3,4 +3,30 @@
 .content {
   max-width: $max-width;
   margin: auto;
+
+  ::ng-deep {
+    .carousel {
+      overflow: hidden;
+      @media screen and (max-width: 575px) {
+        margin: auto -10px;
+      }
+      .carousel-row {
+        max-width: 80%;
+      }
+      .btn-icon mat-icon {
+        font-size: 30px;
+      }
+      ::ng-deep.owl-carousel {
+        margin: auto;
+        .owl-stage-outer {
+            overflow: hidden;
+        }
+        .owl-stage{
+            display: flex;
+            align-items: center;
+        }
+      }
+    }
+
+  }
 }

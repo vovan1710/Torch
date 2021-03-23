@@ -17,7 +17,7 @@
   border: none;
   background-color: transparent;
   border-radius: $btn-radius;
-  height: 40px;
+  height: 45px;
   font-size: 14px;
   cursor: pointer;
   &:disabled {
@@ -26,6 +26,12 @@
   }
   mat-icon {
     margin-right: 5px;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: auto;
+    width: auto;
   }
   &.m {
     width: 200px;
@@ -35,9 +41,16 @@
   }
 }
 
-.btn-blue  {
-  color: $blue040;
-  border: 1px solid $blue040;
+.btn-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.btn-squere {
+  width: 30px;
+  padding: 0;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .btn-underline {

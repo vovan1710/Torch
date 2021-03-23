@@ -1,3 +1,4 @@
+import { carouselOptions } from './../../../_types/global.config';
 import { mainSection3 } from './../../../_content/main-section3';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Section3Component implements OnInit {
   public data = mainSection3;
+  public carouselOptions = carouselOptions;
 
   constructor() { }
 

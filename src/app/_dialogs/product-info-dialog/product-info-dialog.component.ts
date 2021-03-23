@@ -1,3 +1,5 @@
+import { TableSizeDialogComponent } from './../table-size-dialog/table-size-dialog.component';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { LanguageService } from './../../_services/language.service';
 import { buttonsName } from './../../_content/global';
 import { ToastService } from './../../_services/toast.service';
@@ -5,7 +7,7 @@ import { fade } from './../../_animations/animations';
 import { sizes } from './../../_content/sizes';
 import { Product } from './../../_types/Product.interface';
 import { BasketService } from './../../_services/basket.service';
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { basketContent } from 'src/app/_content/basket';
 
@@ -15,9 +17,19 @@ import { basketContent } from 'src/app/_content/basket';
   styleUrls: ['./product-info-dialog.component.scss'],
   animations: [fade]
 })
-export class ProductInfoDialogComponent implements OnInit {
-  @ViewChild('popUp') private popUp: ElementRef;
+export class ProductInfoDialogComponent implements OnInit, AfterViewInit {
+  @ViewChild('carousel') public carouselEl;
   public sizes = sizes;
+  public showCarousel: boolean;
+  public carouselOptions: OwlOptions = {
+    loop: false,
+    dots: false,
+    autoWidth: true,
+    nav: false,
+    navText: ['', ''],
+    margin: 30,
+    items: 1
+  };
   public actualImage = 1;
   public actualSize;
   public maxImages = new Array(3);
@@ -28,6 +40,7 @@ export class ProductInfoDialogComponent implements OnInit {
   public buttonsName = buttonsName;
 
   constructor(public dialogRef: MatDialogRef<ProductInfoDialogComponent>,
+              private dialog: MatDialog,
               private basketService: BasketService,
               public toastService: ToastService,
               private languageService: LanguageService,
@@ -36,7 +49,10 @@ export class ProductInfoDialogComponent implements OnInit {
                 this.inBasketCount = basketService.checkProductsInBasket(this.product.id);
               }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  imageChanged(event) {
+    this.actualImage = event.startPosition + 1;
   }
 
   addToBasket() {
@@ -45,10 +61,23 @@ export class ProductInfoDialogComponent implements OnInit {
       this.basketService.addProductToBasket(this.product, this.actualSize);
       this.actualSize = '';
       this.inBasketCount = this.basketService.checkProductsInBasket(this.product.id);
+      setTimeout(()=> {
+        this.dialogRef.close(true)
+      },500)
+
     } else {
       this.toastService.error(this.basketContent.AddError[this.languageService.getLang()])
     }
-    console.log('basket', this.basketService.getBasketList());
+  }
+
+  openTableDialog() {
+    this.dialog.open(TableSizeDialogComponent, {});
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(()=> {
+      this.showCarousel = true;
+    })
   }
 
 
