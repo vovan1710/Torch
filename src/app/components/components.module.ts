@@ -5,7 +5,6 @@ import { LangChangerComponent } from './lang-changer/lang-changer.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { LangPipe } from '../_pipes/lang.pipe';
-import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -13,8 +12,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     LangChangerComponent,
     ProductComponent,
-    LangPipe,
-    FooterComponent
+    LangPipe
   ],
   imports: [
     CommonModule,
@@ -24,8 +22,7 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     LangChangerComponent,
     ProductComponent,
-    LangPipe,
-    FooterComponent
+    LangPipe
   ]
 })
 export class ComponentsModule { }

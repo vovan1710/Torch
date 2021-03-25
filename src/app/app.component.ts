@@ -1,3 +1,4 @@
+import { menu } from './_content/menu';
 import { BasketService } from './_services/basket.service';
 import { fade } from './_animations/animations';
 import { Component, HostListener, ViewChild } from '@angular/core';
@@ -14,6 +15,7 @@ export class AppComponent {
   @ViewChild('content', { static: true }) content: any;
   title = 'Torch';
   public showBasketInfo: boolean;
+  public menu = menu;
 
   constructor(public basketService: BasketService,
               private route: ActivatedRoute,

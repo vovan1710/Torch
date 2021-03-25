@@ -24,10 +24,8 @@
     <mat-sidenav class="mobile-menu" position='start' #sidenav>
       <div class="main-wrapp">
         <ul class="info">
-          <h4 class="mb-3">Інформація</h4>
-          <li><a href="">Оплата і доставка</a></li>
-          <li><a href="">Контакти</a></li>
-          <li><a href="">О нас</a></li>
+          <h4 class="mb-3">{{menu.title | langPipe}}</h4>
+          <li *ngFor="let item of menu.items"><a (click)="sidenav.toggle()" [routerLink]="item.route"  >{{item.name | langPipe}}</a></li>
         </ul>
         <div class="logo-wrapp">
           <img src="assets/Logo/logo-white.svg" alt="Torch Logo">

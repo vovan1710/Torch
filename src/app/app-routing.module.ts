@@ -1,3 +1,6 @@
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PaymentDeliveryComponent } from './pages/payment-delivery/payment-delivery.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +20,18 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  },
+  {
+    path: 'payment-delivery',
+    component: PaymentDeliveryComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
   },
   {
     path: '',

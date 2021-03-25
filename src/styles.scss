@@ -17,7 +17,7 @@ li {
 
 a {
   text-decoration: none;
-  &:visited {
+  &:visited, &:-webkit-any-link  {
     color: inherit;
   }
 }
