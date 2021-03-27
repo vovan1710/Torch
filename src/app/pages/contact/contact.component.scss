@@ -1,0 +1,48 @@
+@import '../../@theme/theme.scss';
+
+.content {
+  h1 {
+    margin-bottom: $main-margin;
+  }
+}
+
+.block {
+  margin: $main-margin;
+  padding: $main-padding;
+  width: 100%;
+  max-width: 580px;
+  box-sizing: border-box;
+}
+
+.contact-type {
+  margin-left: 5%;
+}
+
+.contact {
+  margin-top: $main-margin*1.5;
+}
+
+.img-wrapp {
+  margin-right: $main-margin;
+  img {
+    width: 20px;
+  }
+}
+
+.btn {
+  padding: 0 10px;
+  min-width: 140px;
+  margin-left: auto;
+}
+
+@media screen and (max-width: $media-l) {
+  .content {
+    display: block;
+    margin-top: 0;
+    padding: 0;
+  }
+  .block {
+    margin: $main-margin auto $main-margin*2;
+    padding: 0;
+  }
+}

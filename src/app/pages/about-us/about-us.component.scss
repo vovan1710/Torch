@@ -1,0 +1,68 @@
+@import '../../@theme/theme.scss';
+
+.content {
+  margin: $main-margin auto;
+  padding-bottom: $main-padding;
+  max-width: $max-width;
+}
+
+h3 {
+  margin-bottom: $main-margin;
+}
+
+.advantages {
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+  margin-bottom: $main-margin;
+  .advantage {
+    padding: $main-padding*2 $main-padding*2 $main-padding;
+    flex-grow: 1;
+    .img-wrapp {
+      margin: auto;
+      width: fit-content;
+      img {
+        width: 70px;
+      }
+    }
+    h2 {
+      line-height: 20px;
+      margin: $main-margin auto;
+      width: 80%;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.galery {
+  margin: $main-margin 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .img-wrapp {
+    margin: $main-margin/2 5px;
+    width: 32%;
+    min-width: 180px;
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+
+@media screen and (max-width: $media-l) {
+  .advantages {
+    display: block;
+  }
+}
+
+@media screen and (max-width: $media-s) {
+  .advantages .advantage{
+    padding: $main-padding 0;
+  }
+  .galery .img-wrapp {
+    width: 100%;
+  }
+}
+

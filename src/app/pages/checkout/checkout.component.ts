@@ -1,3 +1,4 @@
+import { checkoutContent } from './../../_content/checkout';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+  public checkoutContent = checkoutContent;
 
   constructor() { }
 

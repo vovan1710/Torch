@@ -19,21 +19,21 @@
   width: 100%;
   max-width: 580px;
   box-sizing: border-box;
-  min-height: 300px;
   box-shadow: 0 1px 12.6px 0.4px rgb(0 0 0 / 18%);
 }
 
 @media screen and (max-width: $media-l) {
   .content {
     display: block;
+    padding-top: 0;
   }
   .block {
-    margin: $main-margin auto;
+    margin: 0 auto $main-margin;
   }
 }
 
 @media screen and (max-width: $media-m) {
   .block {
-    padding: $main-padding*2 $main-padding;
+    padding: $main-padding $main-padding;
   }
 }

@@ -1,3 +1,4 @@
+import { aboutUs } from './../../_content/about-us';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+  public aboutUs = aboutUs;
 
   constructor() { }
 

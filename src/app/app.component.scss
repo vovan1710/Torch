@@ -12,6 +12,9 @@ $border-width: 1px;
   position: absolute;
   height: $box-size;
   padding: 0 $box-size;
+  @media screen and (max-width: $media-s) {
+    padding: 0 $box-size - 10;
+  }
   &.horizontal {
     width: -webkit-fill-available;
     left: 0;

@@ -1,1 +1,33 @@
-<p>about-us works!</p>
+<div class="content">
+  <h3>{{aboutUs.title | langPipe}}</h3>
+  <p [innerHTML]="aboutUs.description | langPipe"></p>
+  <div class="advantages d-flex j-between">
+    <div class="advantage">
+      <div class="img-wrapp">
+        <img src="assets/Icons/like.svg" alt="Advantage icon">
+      </div>
+      <h2>{{aboutUs.advantages.adv1.title | langPipe}}</h2>
+      <p [innerHTML]="aboutUs.advantages.adv1.description | langPipe"></p>
+    </div>
+    <div class="advantage">
+      <div class="img-wrapp">
+        <img src="assets/Icons/like.svg" alt="Advantage icon">
+      </div>
+      <h2>{{aboutUs.advantages.adv1.title | langPipe}}</h2>
+      <p [innerHTML]="aboutUs.advantages.adv1.description | langPipe"></p>
+    </div>
+    <div class="advantage">
+      <div class="img-wrapp">
+        <img src="assets/Icons/like.svg" alt="Advantage icon">
+      </div>
+      <h2>{{aboutUs.advantages.adv1.title | langPipe}}</h2>
+      <p [innerHTML]="aboutUs.advantages.adv1.description | langPipe"></p>
+    </div>
+  </div>
+  <p [innerHTML]="aboutUs.description2 | langPipe"></p>
+  <div class="galery">
+    <div class="img-wrapp" *ngFor="let image of aboutUs.images; let i = index">
+      <img [src]="'../../../assets/About/'+ (i+1)+'.jpg'" alt="About us image">
+    </div>
+  </div>
+</div>

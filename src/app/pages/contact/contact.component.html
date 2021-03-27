@@ -1,1 +1,51 @@
-<p>contact works!</p>
+<div class="content d-flex j-center">
+  <div class="block">
+    <h1>{{contactInfo.title | langPipe}}</h1>
+    <p [innerHTML]="contactInfo.description | langPipe"></p>
+    <div class="contact-type">
+      <div class="contact d-flex">
+        <div class="img-wrapp"><img src="assets/Icons/mail.png" alt="Email icon"></div>
+        <p>{{contactInfo.email}}</p>
+      </div>
+      <div class="contact d-flex">
+        <div class="img-wrapp"><img src="assets/Icons/phone.png" alt="Email icon"></div>
+        <p>{{contactInfo.phone}}</p>
+      </div>
+      <div class="contact d-flex">
+        <div class="img-wrapp"><img src="assets/Icons/house.png" alt="Email icon"></div>
+        <p>{{contactInfo.address}}</p>
+      </div>
+      <div class="contact d-flex">
+        <div class="img-wrapp"><img src="assets/Icons/schedule.png" alt="Email icon"></div>
+        <p>{{contactInfo.schedule}}</p>
+      </div>
+    </div>
+  </div>
+  <form class="block" [formGroup]="form" onsubmit="submitForm()" >
+    <h1>{{contactForm.title | langPipe}}</h1>
+    <ng-container *ngIf="!isSent">
+      <mat-form-field [appearance]="'outline'">
+        <mat-label>{{contactForm.name | langPipe}}</mat-label>
+        <input matInput formControlName="name" type="text">
+      </mat-form-field>
+      <mat-form-field [appearance]="'outline'">
+        <mat-label>{{contactForm.email | langPipe}}</mat-label>
+        <input matInput formControlName="email" type="email">
+      </mat-form-field>
+      <mat-form-field [appearance]="'outline'">
+        <mat-label>{{contactForm.subject | langPipe}}</mat-label>
+        <input matInput formControlName="subject" type="text">
+      </mat-form-field>
+      <mat-form-field [appearance]="'outline'">
+        <mat-label>{{contactForm.message | langPipe}}</mat-label>
+        <textarea matInput [matAutosizeMinRows]="5" [matAutosizeMaxRows]="10" cdkTextareaAutosize matTextareaAutosize  formControlName="message"></textarea>
+      </mat-form-field>
+      <button class="btn btn-dark" [disabled]="form.invalid || isLoading" type="submit" (click)="submitForm()">{{contactForm.sendButton | langPipe}}</button>
+    </ng-container>
+
+    <div *ngIf="isSent" [@fade] >
+      <p style="border-bottom: 1px solid; text-align: center; width: fit-content;">{{contactForm.sendMessage | langPipe}}</p>
+    </div>
+  </form>
+
+</div>

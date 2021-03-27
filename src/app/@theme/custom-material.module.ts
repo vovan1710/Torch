@@ -5,6 +5,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -15,7 +17,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     CommonModule,
@@ -23,7 +27,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule
    ],
 })
 export class CustomMaterialModule {}
