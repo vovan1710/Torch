@@ -27,7 +27,7 @@
   <p [innerHTML]="aboutUs.description2 | langPipe"></p>
   <div class="galery">
     <div class="img-wrapp" *ngFor="let image of aboutUs.images; let i = index">
-      <img [src]="'../../../assets/About/'+ (i+1)+'.jpg'" alt="About us image">
+      <img [src]="'assets/About/'+ (i+1)+'.jpg'" alt="About us image">
     </div>
   </div>
 </div>
