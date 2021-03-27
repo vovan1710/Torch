@@ -8,3 +8,8 @@ export const buttonsName = {
     RU: 'Добавить еще'
   },
 }
+
+export interface Language {
+  UA: string;
+  RU: string;
+}

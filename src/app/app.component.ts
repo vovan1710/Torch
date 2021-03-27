@@ -16,6 +16,7 @@ export class AppComponent {
   title = 'Torch';
   public showBasketInfo: boolean;
   public menu = menu;
+  public basketInfo = basketContent.haederInfo;
 
   constructor(public basketService: BasketService,
               private route: ActivatedRoute,

@@ -1,0 +1,39 @@
+@import '../../@theme/theme.scss';
+
+.content {
+  padding: $main-padding 0;
+  h1, h3 {
+    margin-bottom: $main-margin;
+  }
+  .type-info {
+    border-top: 1px solid rgba(0,0,0,.1);
+    margin-bottom: $main-margin;
+    padding-top: $main-padding;
+  }
+}
+
+.block {
+  border-radius: $border-radius;
+  margin: $main-margin;
+  padding: $main-padding*2;
+  width: 100%;
+  max-width: 580px;
+  box-sizing: border-box;
+  min-height: 300px;
+  box-shadow: 0 1px 12.6px 0.4px rgb(0 0 0 / 18%);
+}
+
+@media screen and (max-width: $media-l) {
+  .content {
+    display: block;
+  }
+  .block {
+    margin: $main-margin auto;
+  }
+}
+
+@media screen and (max-width: $media-m) {
+  .block {
+    padding: $main-padding*2 $main-padding;
+  }
+}

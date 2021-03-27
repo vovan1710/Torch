@@ -1,1 +1,16 @@
-<p>payment-delivery works!</p>
+<div class="content d-flex j-center">
+  <div class="block">
+    <h1>{{paymentInfo.title | langPipe}}</h1>
+    <div *ngFor="let type of paymentInfo.types" class="type-info">
+      <h3>{{type.title | langPipe}}</h3>
+      <p [innerHTML]="type.description | langPipe"></p>
+    </div>
+  </div>
+  <div class="block">
+    <h1>{{deliveryInfo.title | langPipe}}</h1>
+    <div *ngFor="let type of deliveryInfo.types" class="type-info">
+      <h3>{{type.title | langPipe}}</h3>
+      <p [innerHTML]="type.description | langPipe"></p>
+    </div>
+  </div>
+</div>

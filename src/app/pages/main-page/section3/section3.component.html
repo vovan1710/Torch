@@ -6,7 +6,7 @@
       <mat-icon>keyboard_arrow_left</mat-icon>
     </button>
     <owl-carousel-o [options]="carouselOptions" #carousel class="carousel-row">
-      <ng-template carouselSlide *ngFor="let product of data.products" [width]="140">
+      <ng-template carouselSlide *ngFor="let product of data.products" [width]="150">
         <app-product [product]='product'></app-product>
       </ng-template>
     </owl-carousel-o>

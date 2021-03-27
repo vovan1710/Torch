@@ -31,6 +31,9 @@ a {
     font-size: 30px;
     margin: 5px auto;
     font-family: 'Montserrat', sans-serif;
+    @media screen and (max-width: $media-s) {
+      font-size: 25px;
+    }
   }
   h2 {
     font-size: 18px;
@@ -43,6 +46,9 @@ a {
     margin: 5px auto;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
+    @media screen and (max-width: $media-s) {
+      font-size: 18px;
+    }
   }
   h4 {
     font-size: 18px;

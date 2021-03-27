@@ -1,4 +1,10 @@
 export const  basketContent = {
+  haederInfo(count) {
+    return {
+      UA: `В вашій коробці ${count} товари`,
+      RU: `В вашей коробке ${count} товара`
+    }
+  },
   title: {
     UA: 'Моя коробка',
     RU: 'Моя коробка'

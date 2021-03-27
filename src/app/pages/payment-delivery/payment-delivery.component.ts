@@ -1,3 +1,4 @@
+import { deliveryInfo, paymentInfo } from './../../_content/payments-delivery';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment-delivery.component.scss']
 })
 export class PaymentDeliveryComponent implements OnInit {
+  public paymentInfo = paymentInfo;
+  public deliveryInfo = deliveryInfo;
 
   constructor() { }
 

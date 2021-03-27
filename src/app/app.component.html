@@ -34,7 +34,7 @@
     </mat-sidenav>
     <mat-sidenav-content class="content" #content (scroll)="onWindowScroll($event)">
       <div class="basket-info" [@fade] *ngIf="showBasketInfo" routerLink="basket">
-        <p class="font-m font-bold">В вашей коробке {{basketCount}} товаров</p>
+        <p class="font-m font-bold">{{basketInfo(basketCount) | langPipe}}</p>
         <img style="max-width: 30px;" class="w-100" src="assets/Test/box.png" alt="box">
       </div>
       <router-outlet style="display: none;"></router-outlet>
