@@ -1,9 +1,9 @@
-import { menu } from './_content/menu';
 import { BasketService } from './_services/basket.service';
 import { fade } from './_animations/animations';
 import { Component, HostListener, ViewChild } from '@angular/core';
-import { basketContent } from './_content/basket';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { menu } from 'src/assets/_content/menu';
+import { basketContent } from 'src/assets/_content/basket';
 
 @Component({
   selector: 'app-root',

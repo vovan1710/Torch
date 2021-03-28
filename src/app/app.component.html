@@ -6,7 +6,7 @@
       </button>
       <a class="btn-icon basket-btn-wrapp ml-2" routerLink='basket'>
         <div class="counter">{{basketCount}}</div>
-        <img style="max-width: 28px;" class="w-100" src="assets/Test/box.png" alt="box">
+        <img style="max-width: 28px;" class="w-100" src="assets/Main/box.png" alt="box">
       </a>
     </div>
     <a class="d-flex font-bold" routerLink=''>
@@ -35,7 +35,7 @@
     <mat-sidenav-content class="content" #content (scroll)="onWindowScroll($event)">
       <div class="basket-info" [@fade] *ngIf="showBasketInfo" routerLink="basket">
         <p class="font-m font-bold">{{basketInfo(basketCount) | langPipe}}</p>
-        <img style="max-width: 30px;" class="w-100" src="assets/Test/box.png" alt="box">
+        <img style="max-width: 30px;" class="w-100" src="assets/Main/box.png" alt="box">
       </div>
       <router-outlet style="display: none;"></router-outlet>
       <app-footer></app-footer>

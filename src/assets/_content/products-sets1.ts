@@ -1,10 +1,10 @@
-import { Product } from './../_types/Product.interface';
+import { Product } from './../../app/_types/Product.interface';
 
-export const singles : Product[] = [
+export const sets1: Product[] = [
   {
-    img: 'assets/Singles/Single1',
-    price: '37',
-    id: 'i101',
+    img: 'assets/Sets1/Set1',
+    price: '25',
+    id: 's101',
     name: {
       UA: 'Кельвін1',
       RU: 'Кельвин1'
@@ -15,9 +15,9 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Singles/Single2',
-    price: '37',
-    id: 'i102',
+    img: 'assets/Sets1/Set2',
+    price: '30',
+    id: 's102',
     name: {
       UA: 'Кельвін2',
       RU: 'Кельвин2'
@@ -28,9 +28,9 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Singles/Single3',
-    price: '37',
-    id: 'i103',
+    img: 'assets/Sets1/Set3',
+    price: '33',
+    id: 's103',
     name: {
       UA: 'Кельвін3',
       RU: 'Кельвин3'
@@ -41,9 +41,9 @@ export const singles : Product[] = [
     }
   },
   {
-    img: 'assets/Singles/Single4',
+    img: 'assets/Sets1/Set4',
     price: '37',
-    id: 'i104',
+    id: 's104',
     name: {
       UA: 'Кельвін4',
       RU: 'Кельвин4'

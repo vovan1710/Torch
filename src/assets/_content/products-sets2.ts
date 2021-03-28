@@ -1,4 +1,5 @@
-import { Product } from './../_types/Product.interface';
+import { Product } from './../../app/_types/Product.interface';
+
 
 export const sets2: Product[] = [
   {

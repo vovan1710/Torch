@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { menu } from 'src/app/_content/menu';
+import { menu } from 'src/assets/_content/menu';
 
 @Component({
   selector: 'app-footer',

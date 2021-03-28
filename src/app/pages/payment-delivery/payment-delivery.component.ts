@@ -1,5 +1,5 @@
-import { deliveryInfo, paymentInfo } from './../../_content/payments-delivery';
 import { Component, OnInit } from '@angular/core';
+import { deliveryInfo, paymentInfo } from 'src/assets/_content/payments-delivery';
 
 @Component({
   selector: 'app-payment-delivery',

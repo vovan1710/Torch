@@ -1,7 +1,7 @@
 import { Product } from './../../_types/Product.interface';
 import { BasketService } from './../../_services/basket.service';
 import { Component, OnInit } from '@angular/core';
-import { basketContent } from 'src/app/_content/basket';
+import { basketContent } from 'src/assets/_content/basket';
 
 @Component({
   selector: 'app-basket-page',

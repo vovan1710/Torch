@@ -1,5 +1,5 @@
-import { checkoutContent } from './../../_content/checkout';
 import { Component, OnInit } from '@angular/core';
+import { checkoutContent } from 'src/assets/_content/checkout';
 
 @Component({
   selector: 'app-checkout',

@@ -1,8 +1,8 @@
 import { carouselOptions } from './../../../_types/global.config';
-import { mainSection2 } from '../../../_content/main-section2';
 import { LanguageService } from './../../../_services/language.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { mainSection2 } from 'src/assets/_content/main-section2';
 
 @Component({
   selector: 'app-section2',

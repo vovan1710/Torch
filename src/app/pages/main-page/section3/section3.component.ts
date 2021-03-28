@@ -1,6 +1,6 @@
 import { carouselOptions } from './../../../_types/global.config';
-import { mainSection3 } from './../../../_content/main-section3';
 import { Component, OnInit } from '@angular/core';
+import { mainSection3 } from 'src/assets/_content/main-section3';
 
 @Component({
   selector: 'app-section3',

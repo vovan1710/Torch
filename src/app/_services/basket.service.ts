@@ -1,8 +1,8 @@
 import { Product } from './../_types/Product.interface';
-import { singles } from './../_content/products-singles';
-import { sets2 } from './../_content/products-sets2';
-import { sets1 } from './../_content/products-sets1';
 import { Injectable } from '@angular/core';
+import { sets2 } from 'src/assets/_content/products-sets2';
+import { singles } from 'src/assets/_content/products-singles';
+import { sets1 } from 'src/assets/_content/products-sets1';
 
 let KEY = 'torch_basket_key'
 

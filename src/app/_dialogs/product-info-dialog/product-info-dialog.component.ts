@@ -1,15 +1,15 @@
 import { TableSizeDialogComponent } from './../table-size-dialog/table-size-dialog.component';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { LanguageService } from './../../_services/language.service';
-import { buttonsName } from './../../_content/global';
 import { ToastService } from './../../_services/toast.service';
 import { fade } from './../../_animations/animations';
-import { sizes } from './../../_content/sizes';
 import { Product } from './../../_types/Product.interface';
 import { BasketService } from './../../_services/basket.service';
 import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { basketContent } from 'src/app/_content/basket';
+import { sizes } from 'src/assets/_content/sizes';
+import { basketContent } from 'src/assets/_content/basket';
+import { buttonsName } from 'src/assets/_content/global';
 
 @Component({
   selector: 'app-product-info-dialog',

@@ -1,4 +1,4 @@
-import { aboutUs } from './../../_content/about-us';
+import { aboutUs } from './../../../assets/_content/about-us';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

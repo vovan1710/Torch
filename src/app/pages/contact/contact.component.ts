@@ -1,11 +1,12 @@
+import { contactForm } from './../../../assets/_content/contact';
 import { fade } from './../../_animations/animations';
 import { LanguageService } from './../../_services/language.service';
 import { ToastService } from './../../_services/toast.service';
-import { contactForm, contactInfo } from './../../_content/contact';
 import { Component, OnInit } from '@angular/core';
 import {Email} from "../contact/smtp.js";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { contactInfo } from 'src/assets/_content/contact';
 
 @Component({
   selector: 'app-contact',

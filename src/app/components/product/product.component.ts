@@ -1,7 +1,6 @@
-import { buttonsName } from './../../_content/global';
+import { buttonsName } from './../../../assets/_content/global';
 import { Product } from './../../_types/Product.interface';
 import { ProductInfoDialogComponent } from './../../_dialogs/product-info-dialog/product-info-dialog.component';
-import { LanguageService } from './../../_services/language.service';
 import { BasketService } from './../../_services/basket.service';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
